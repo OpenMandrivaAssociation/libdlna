@@ -1,11 +1,11 @@
 %define name libdlna
 %define version 0.2.3 
-%define release %mkrel 1
+%define release %mkrel 2
 
 %define major   0
 %define libname %mklibname dlna %major
 
-Summary: open-source implementation of DLNA (Digital Living Network Alliance)
+Summary: Implementation of DLNA (Digital Living Network Alliance)
 Name: %{name}
 Version: %{version}
 Release: %{release}
