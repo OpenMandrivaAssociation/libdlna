@@ -4,13 +4,15 @@
 
 %define major   0
 %define libname %mklibname dlna %major
+%define develname %mklibname -d dlna
 
 Summary: Implementation of DLNA (Digital Living Network Alliance)
 Name: %{name}
 Version: %{version}
 Release: %{release}
 Source0: %{name}-%{version}.tar.bz2
-License: GPL
+Patch0: libdlna-0.2.3-newffmpeg.patch
+License: LGPLv2+
 Group: System/Libraries
 Url: http://libdlna.geexbox.org/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -30,26 +32,29 @@ Group:          System/Libraries
 %description -n %{libname}
 Dynamic libraries from %name.
 
-%package -n     %{libname}-devel
+%package -n     %{develname}
 Summary:        Header files and static libraries from %name
 Group:          Development/C
 Requires:       %{libname} >= %{version}
 Provides:       %{name}-devel = %{version}-%{release}
-Obsoletes:      %name-devel
+Obsoletes:      %name-devel < %{version}-%{release}
+Obsoletes:	%{_lib}dlna0-devel
 
-%description -n %{libname}-devel
+%description -n %{develname}
 Libraries and includes files for developing programs based on %name.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
-./configure
+%setup_compile_flags
+./configure --prefix=%{_prefix} --libdir=%{_libdir} --enable-static --enable-shared
 make
 
 %install
 rm -rf %{buildroot}
-%makeinstall
+%makeinstall_std
 
 %clean
 rm -rf %{buildroot}
@@ -64,9 +69,9 @@ rm -rf %{buildroot}
 %files -n %{libname}
 %defattr(-,root,root)
 %doc AUTHORS COPYING ChangeLog README 
-%{_libdir}/*.so.*
+%{_libdir}/*.so.%{major}*
 
-%files -n %{libname}-devel
+%files -n %{develname}
 %defattr(-,root,root)
 %{_includedir}/*
 %{_libdir}/*.so
