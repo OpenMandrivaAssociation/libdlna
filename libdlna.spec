@@ -1,6 +1,6 @@
 %define name libdlna
-%define version 0.2.3 
-%define release %mkrel 6
+%define version 0.2.4
+%define release 1
 
 %define major   0
 %define libname %mklibname dlna %major
@@ -10,12 +10,11 @@ Summary: Implementation of DLNA (Digital Living Network Alliance)
 Name: %{name}
 Version: %{version}
 Release: %{release}
-Source0: %{name}-%{version}.tar.bz2
+Source0: http://libdlna.geexbox.org/releases/%{name}-%{version}.tar.bz2
 Patch0: libdlna-0.2.3-newffmpeg.patch
 License: LGPLv2+
 Group: System/Libraries
 Url: http://libdlna.geexbox.org/
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: ffmpeg-devel
 
 %description
@@ -53,26 +52,14 @@ Libraries and includes files for developing programs based on %name.
 make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
-%clean
-rm -rf %{buildroot}
-
-%if %mdkversion < 200900
-%post -n %{libname} -p /sbin/ldconfig
-%endif
-%if %mdkversion < 200900
-%postun -n %{libname} -p /sbin/ldconfig
-%endif
 
 %files -n %{libname}
-%defattr(-,root,root)
 %doc AUTHORS COPYING ChangeLog README 
 %{_libdir}/*.so.%{major}*
 
 %files -n %{develname}
-%defattr(-,root,root)
 %{_includedir}/*
 %{_libdir}/*.so
 %{_libdir}/*.a
