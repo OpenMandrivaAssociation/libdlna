@@ -11,7 +11,6 @@ Name: %{name}
 Version: %{version}
 Release: %{release}
 Source0: http://libdlna.geexbox.org/releases/%{name}-%{version}.tar.bz2
-Patch0: libdlna-0.2.3-newffmpeg.patch
 License: LGPLv2+
 Group: System/Libraries
 Url: http://libdlna.geexbox.org/
@@ -44,7 +43,6 @@ Libraries and includes files for developing programs based on %name.
 
 %prep
 %setup -q
-%patch0 -p0
 
 %build
 %setup_compile_flags
