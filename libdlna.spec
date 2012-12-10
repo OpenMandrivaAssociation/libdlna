@@ -63,3 +63,39 @@ make
 %{_libdir}/*.a
 %{_libdir}/pkgconfig/*pc
 
+
+
+%changelog
+* Tue Apr 03 2012 Alexander Khrukin <akhrukin@mandriva.org> 0.2.4-1
++ Revision: 788989
+- patch removed
+- version update 0.2.4
+
+* Fri Dec 10 2010 Oden Eriksson <oeriksson@mandriva.com> 0.2.3-6mdv2011.0
++ Revision: 620115
+- the mass rebuild of 2010.0 packages
+
+* Sat Sep 12 2009 Thierry Vignaud <tv@mandriva.org> 0.2.3-5mdv2010.0
++ Revision: 438550
+- rebuild
+
+* Mon Oct 20 2008 Funda Wang <fwang@mandriva.org> 0.2.3-4mdv2009.1
++ Revision: 295484
+- adopt to new ffmpeg file location
+- use compile flags
+- clearify license
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - rebuild
+
+  + Pixel <pixel@mandriva.com>
+    - do not call ldconfig in %%post/%%postun, it is now handled by filetriggers
+
+* Mon Feb 18 2008 Thierry Vignaud <tv@mandriva.org> 0.2.3-2mdv2008.1
++ Revision: 170947
+- rebuild
+
+* Sat Jan 26 2008 Erwan Velu <erwan@mandriva.org> 0.2.3-1mdv2008.1
++ Revision: 158277
+- import libdlna
+
