@@ -1,6 +1,6 @@
 %define name libdlna
 %define version 0.2.4
-%define release 1
+%define release 2
 
 %define major   0
 %define libname %mklibname dlna %major
