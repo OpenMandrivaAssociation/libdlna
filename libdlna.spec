@@ -10,7 +10,7 @@ License:	LGPLv2.1+
 Group:		System/Libraries
 Url:		http://libdlna.geexbox.org/
 Source0:	http://libdlna.geexbox.org/releases/%{name}-%{version}.tar.bz2
-Patch0:		libdlna-0.2.4-ffmpeg-2.4.patch
+Patch0:		libdlna-0.2.4-ffmpeg-2.5.4.patch
 BuildRequires:	ffmpeg-devel >= 2.5.4
 
 %description

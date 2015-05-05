@@ -1,7 +1,7 @@
 Index: libdlna-0.2.4/src/profiles.c
 ===================================================================
 --- libdlna-0.2.4/src/profiles.c
-+++ libdlna-0.2.4/src/profiles.c	2014-11-14 17:55:59.517264671 +0100
++++ libdlna-0.2.4/src/profiles.c	2015-05-14 23:05:01.517264671 +0200
 @@ -287,7 +287,7 @@
      return NULL;
    }
