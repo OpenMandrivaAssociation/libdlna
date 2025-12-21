@@ -14,6 +14,11 @@ Source0: http://libdlna.geexbox.org/releases/%{name}-%{version}.tar.bz2
 License: LGPLv2+
 Group: System/Libraries
 Url: https://libdlna.geexbox.org/
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires: ffmpeg-devel
 
 %description
